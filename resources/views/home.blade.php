@@ -8,13 +8,26 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
+                    
+                    
+                    @if(Auth::user()->rol == 'Secretaria')
+                        
+                        
+
                     @endif
 
-                    You are logged in!
+                    @if(Auth::user()->rol == 'EncargadoTitulacion')
+                    
+
+
+                    @endif
+
+                    @if(Auth::user()->rol == 'Academico')
+                        
+                        
+
+                    @endif
+
                 </div>
             </div>
         </div>

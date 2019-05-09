@@ -39,6 +39,24 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label text-md-right">{{ Form::label('rol', 'Rol del usuario') }}</div>
+                                <div class="col-md-6">
+                                    <label class="col-md-6">
+                                        {{ Form::radio('rol', 'Secretaria') }} Secretaria
+                                    </label>
+                                    <label class="col-md-6">
+                                        {{ Form::radio('rol', 'Titulacion') }} Titulacion
+                                    </label>
+                                    <label class="col-md-6">
+                                        {{ Form::radio('rol', 'Vinculacion') }} Vinculacion
+                                    </label>
+                                    <label class="col-md-6">
+                                        {{ Form::radio('rol', 'Academico') }} Academico
+                                    </label>
+                                </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
