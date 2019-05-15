@@ -10,19 +10,34 @@
                 <div class="panel-body">
                     
                     
-                    @if(Auth::user()->rol == 'Secretaria')
+                    @if(Auth::user()->rol == 'SECRETARIA')
                         
                         
 
                     @endif
 
-                    @if(Auth::user()->rol == 'EncargadoTitulacion')
-                    
+                    @if(Auth::user()->rol == 'TITULACION')
+                        <button>
+                            Hola esto es un <b>botón</b>
+                            <br>
+                            <br>
+                            Puedo poner saltos de línea en él!
+                                        <hr>
+                            Y otras cosas
+                            <br>
+                                    <img src="http://www.desarrolloweb.com/images/logo_desarrollo_web.gif" width="261" height="35" alt="">
+                        </button>
 
 
                     @endif
 
-                    @if(Auth::user()->rol == 'Academico')
+                    @if(Auth::user()->rol == 'ACADEMICO')
+                        
+                        
+
+                    @endif
+
+                    @if(Auth::user()->rol == 'VINCULACION')
                         
                         
 

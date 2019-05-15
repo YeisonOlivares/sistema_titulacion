@@ -38,4 +38,5 @@ class CreateUsersTable extends Migration
 composer install 
 php artisan key:generate 
 php artisan config:clear
+composer require laravelcollective/html "5.5.*"
 */
