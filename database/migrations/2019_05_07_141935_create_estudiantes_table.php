@@ -18,11 +18,10 @@ class CreateEstudiantesTable extends Migration
             $table->string('run',16)->index()->unique();
             $table->string('nombre',32);
             $table->string('telefono',32);
-            $table->string('carrera',64);
-            $table->integer("id_trabajo")->unsigned()->nullable();
+            $table->enum('carrera',['ICCI','IECI','IenCI'])->default('ICCI');
+            $table->string('correo',64)->unique();
             $table->timestamps();
 
-            $table->foreign('id_trabajo')->references('id')->on('trabajos');
         });
     }
 
