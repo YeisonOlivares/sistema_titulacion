@@ -7,14 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class estudiante extends Model
 {
     protected $fillable = [
-        'run', 'nombre', 'telefono', 'carrera',
+        'nombre', 'run', 'carera', 'telefono', 'correo'
     ];
 
-    protected $hidden = [
-        'id_trabajo'
-    ];
-    public function trabajo()
-    {
-        return $this->belongsTo(trabajo::class);
-    }
 }
