@@ -11,7 +11,17 @@
                     
                     
                     @if(Auth::user()->rol == 'SECRETARIA')
-                        
+                    <td width="10px">
+                                    <a href="{{ route('estudiantes.index') }}" class="btn btn-sm btn-default hol">
+                                        Registro estudiantes
+                                    </a>
+                    </td>
+
+                    <td width="10px">
+                                    <a href="{{ route('academicos.index') }}" class="btn btn-sm btn-default hol">
+                                        Registro academicos
+                                    </a>
+                    </td>
                         
 
                     @endif

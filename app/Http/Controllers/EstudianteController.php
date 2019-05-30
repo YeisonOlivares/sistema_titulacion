@@ -15,6 +15,8 @@ class EstudianteController extends Controller
     {
         // ACA SE DEBERIA VALIDAR LA AUTENTIFICACION DEL USUARIO:
         // SECRETARIA, TITULACION , ETC.
+
+        
     }
     /**
      * Display a listing of the resource.
@@ -130,7 +132,7 @@ class EstudianteController extends Controller
     public function store(EstudianteStoreRequest $request)
     {
         // Validacion:
-        $estudiante = estudiante::create($request->all());
+        $estudiante = Estudiante::create($request->all());
 
         $cleanRut = $estudiante->run;
 
@@ -142,7 +144,7 @@ class EstudianteController extends Controller
             //Si el rut que acaba de ingresar el usuario es invalido, entonces destruimos el titulado que creamos arriba.
             $this->destroy($estudiante->id);
             return redirect()->route('estudiantes.create')
-                ->with('info','Rut mal ingresado');
+                ->with('error','Rut mal ingresado');
         }
 
         return redirect()->route('estudiantes.index')
@@ -159,7 +161,7 @@ class EstudianteController extends Controller
     {
         $estudiante = Estudiante::find($id);
 
-        return view ('estudiantes.show',compact('estudiante'));
+        return view('estudiantes.show',compact('estudiante'));
     }
 
     /**
@@ -200,7 +202,8 @@ class EstudianteController extends Controller
      */
     public function destroy($id)
     {
-        $estudiante = Estudiante::find($id)->delete();
+        //  
+        Estudiante::find($id)->delete();
 
         return back()->with('info','Elimiando correctamente');
     }
