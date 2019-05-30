@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Academico;
+use App\Http\Requests\AcademicoStoreRequest;
+use App\Http\Requests\AcademicoUpdateRequest;
+
 class AcademicoController extends Controller
 {
     /**
@@ -13,7 +17,9 @@ class AcademicoController extends Controller
      */
     public function index()
     {
-        //
+        $academicos = Academico::orderBy('id','DESC')->paginate();
+
+        return view('academicos.index',compact('academicos'));
     }
 
     /**
@@ -23,7 +29,9 @@ class AcademicoController extends Controller
      */
     public function create()
     {
-        //
+        return view('academicos.create');
+
+
     }
 
     /**
@@ -32,9 +40,13 @@ class AcademicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AcademicoStoreRequest $request)
     {
-        //
+        $academico = Academico::create($request->all());
+
+        return redirect()->route('academicos.index');
+
+        
     }
 
     /**
@@ -45,7 +57,9 @@ class AcademicoController extends Controller
      */
     public function show($id)
     {
-        //
+        $academico = Academico::find($id);
+
+        return view('academicos.show',compact('academico'));
     }
 
     /**
@@ -56,7 +70,8 @@ class AcademicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $academico =Academico::find($id);
+        return view('academicos.edit', compact('academico'));
     }
 
     /**
@@ -66,9 +81,14 @@ class AcademicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AcademicoUpdateRequest $request, $id)
     {
-        //
+        $academico = Academico::find($id);
+
+        $academico>fill($request->all()->save());
+
+        return redirect()->route('academicos.edit',$academico->id)
+            ->with('info','Academico editado con éxito');
     }
 
     /**
@@ -79,6 +99,9 @@ class AcademicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ////  
+        Academico::find($id)->delete();
+
+        return back()->with('info','Elimiando correctamente');
     }
 }

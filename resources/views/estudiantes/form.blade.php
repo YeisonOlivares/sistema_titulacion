@@ -6,7 +6,7 @@
     {{ Form::label('nombre','Nombre del estudiante')}}
     {{ Form::text('nombre',null, ['class'=>'form-control'])}}
 </div>
-<div class="form-group">
+<div class="form-group" style="width: 700px">
     {{ Form::label('run','RUN')}}
     {{ Form::text('run',null, ['class'=>'form-control'])}}
 </div>
@@ -40,7 +40,9 @@
 
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary float-left']) }}
-    <a href="{{ route( 'estudiante' ) }}" class="btn btn-sm btn-primary float-right">Atras</a>
+    
+    
+    <a href="{{ route( 'estudiantes.index' ) }}" class="btn btn-sm btn-primary float-right">Atras</a>
 </div>
 
 </div>
