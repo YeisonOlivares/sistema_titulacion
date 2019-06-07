@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::resource('estudiantes','EstudianteController');
 Route::resource('academicos','AcademicoController');
-
+Route::resource('actividades','ActividadController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
