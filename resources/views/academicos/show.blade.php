@@ -14,8 +14,14 @@
                     <p><strong>Nombre</strong> {{ $academico->nombre}}</p>
                     <p><strong>RUN</strong> {{ $academico->run}}</p>
                     <p><strong>Correo</strong> {{ $academico->correo}}</p>
+                    <label class="col-md-0">
+                        <a href="{{ route( 'academicos.index' ) }}" class="btn btn-sm btn-primary float-right">Atras</a>
+                    </label>
+                
                 </div>
+
             </div>
+            
         </div>
     </div>
 </div>

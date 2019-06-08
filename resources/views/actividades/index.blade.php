@@ -6,8 +6,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Lista de Academicos
-                    <a href="{{ route('academicos.create') }}" class="btn btn-sm btn-primary pull-right">
+                    Lista de Actividades
+                    <a href="{{ route('actividades.create') }}" class="btn btn-sm btn-primary pull-right">
                         Nuevo
                     </a>
                 </div>
@@ -17,28 +17,28 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="10px">RUN</th>
+                                <th width="10px">ID</th>
                                 <th>Nombre</th>
                                 <th colspan="3">&nbsp;</th> 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($academicos as $academico)
+                            @foreach($actividades as $actividad)
                             <tr>
-                                <td> {{ $academico->run}}</td>
-                                <td> {{ $academico->nombre}}</td>
+                                <td> {{ $actividad->id}}</td>
+                                <td> {{ $actividad->nombre_actividad}}</td>
                                 <td width="10px">
-                                    <a href=" {{ route('academicos.show', $academico->id) }}" class="btn btn-sm btn-default">
+                                    <a href=" {{ route('actividades.show', $actividad->id) }}" class="btn btn-sm btn-default">
                                         Ver
                                     </a>
                                 </td>
                                 <td width="10px">
-                                    <a href="{{ route('academicos.edit', $academico->id) }}" class="btn btn-sm btn-default">
+                                    <a href="{{ route('actividades.edit', $actividad->id) }}" class="btn btn-sm btn-default">
                                         Editar
                                     </a>
                                 </td>
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['academicos.destroy',$academico->id],
+                                    {!! Form::open(['route' => ['actividades.destroy',$actividad->id],
                                      'method' => 'DELETE'] ) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -49,9 +49,8 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $academicos->render()}}
+                    {{ $actividades->render()}}
                 </div>
-                
             </div>
         </div>
     </div>

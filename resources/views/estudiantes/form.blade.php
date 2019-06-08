@@ -13,7 +13,7 @@
 
 
 <div class="form-group">
-    <div class="col-md-4 col-form-label text">{{ Form::label('carrera', 'Carrera') }}</div>
+    <div class="col-md-0 col-form-label text">{{ Form::label('carrera', 'Carrera') }}</div>
         <div class="col-md-8">
             <label class="col-md-6">
                 {{ Form::radio('carrera', 'ICCI',['class'=>'form-control'])}} ICCI
@@ -29,20 +29,36 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('telefono', 'Telefono')}}
-    {{ Form::text('telefono', null, ['class'=>'form-group'])}}
+    <label class="col-md-2">
+        {{ Form::label('telefono', 'Telefono')}}
+    </label>
+
+    {{ Form::text('telefono', null, ['class'=>'form-group'])}}  
+
 </div>
 
 <div class="form-group">
-    {{ Form::label('correo','Correo')}}
+    <label class="col-md-2">
+        {{ Form::label('correo','Correo')}}
+    </label>
+
     {{ Form::email('correo',null, ['class'=>'form-group'])}}
+    
+
 </div>
 
 <div class="form-group">
-    {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary float-left']) }}
+    <label class="col-md-2">
+        {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary float-left']) }}
+
+
+
+    </label>
+    <a href="{{ route( 'estudiantes.index' ) }}" class="btn btn-sm btn-primary float-right">Atras</a>  
     
     
-    <a href="{{ route( 'estudiantes.index' ) }}" class="btn btn-sm btn-primary float-right">Atras</a>
+    
+
 </div>
 
 </div>

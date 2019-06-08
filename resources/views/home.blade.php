@@ -23,7 +23,12 @@
                                     </a>
                     </td>
                         
-
+                    <td width="10px">
+                                    <a href="{{ route('actividades.index') }}" class="btn btn-sm btn-default hol">
+                                        Registro tipo Actividad
+                                    </a>
+                    </td>
+                        
                     @endif
 
                     @if(Auth::user()->rol == 'TITULACION')
