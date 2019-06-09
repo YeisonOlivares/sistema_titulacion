@@ -49,6 +49,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="{{ route( 'home' ) }}" class="btn btn-sm btn-primary pull-right">Atras</a>
                     {{ $academicos->render()}}
                 </div>
                 

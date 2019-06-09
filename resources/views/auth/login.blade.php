@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
+<body style="background-image: src(../images/ucnlogo.png);background-repeat:repeat">
+</body>
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+            <div class="panel panel-default" style="border-radius: 20px; background-color: rgba(0,0,200,0.5);display:block">
+                <div class="panel-heading" style="border-radius: 20px; background-color: rgba(0,0,200,0);display:block;border:none">Login</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
