@@ -25,7 +25,7 @@
 </head>
 <body style="background-color:#d6d6d6">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top" style="background-color:#033076">
+        <nav class="navbar navbar-default navbar-static-top" style="background-color:#033076; border:none">
             <img src= "../images/ucnlogoblanco.png" style= "height: 54px" alt="Logo UCN">
             <div class="container">
                 <div class="navbar-header">

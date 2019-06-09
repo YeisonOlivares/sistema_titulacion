@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-<body style="background-image: src(../images/ucnlogo.png);background-repeat:repeat">
-</body>
+<body style="background-image: url(../images/ucnentrada.jpg); background-repeat: no-repeat; background-position:center; background-size: cover"></body>
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default" style="border-radius: 20px; background-color: rgba(0,0,200,0.5);display:block">
-                <div class="panel-heading" style="border-radius: 20px; background-color: rgba(0,0,200,0);display:block;border:none">Login</div>
+            <div class="panel panel-default" style="border-radius: 20px; background-color: rgba(37,36,150,0.5);display:block;border:none;color:white">
+                <div class="panel-heading" style="border-radius: 20px; background-color: rgba(0,0,200,0);display:block;border:none; color:white">Login</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -53,11 +53,11 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" style="background-color:#d68227">
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" style="color:white" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>
@@ -68,4 +68,5 @@
         </div>
     </div>
 </div>
+
 @endsection
